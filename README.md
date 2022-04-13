@@ -1,8 +1,9 @@
-## :world_map: 使用教程
+﻿## :world_map: 使用教程
 
 【拉库】
 
     ql repo https://github.com/Yiov/wool.git "" "COOKIE"
+
 
 ## :loudspeaker: 关于小号
 
@@ -19,43 +20,652 @@
 
 我把我已知的都列举出来了，也欢迎投更好用的
 
-* [ToolTT](https://tooltt.com/header2json/)「好像不好用了」
+* ~[ToolTT](https://tooltt.com/header2json/)「好像不好用了」~
 
 * [uutool](https://uutool.cn/header2json/)
 
 * [wejson](https://wejson.cn/header2json/)
 
 
+## :octocat: 疑问及交流
+
+使用中仍会遇到些小的问题，请有疑问的同学在电报上问我吧，尽力帮你们答疑
+
+个人TG账号：[@yiovl](https://t.me/yiovl)
+
+TG不能私聊的，善用百度[电报+86不能私聊](https://www.jianshu.com/p/db274b58967f)
+
+工作原因回复不及时，见谅，也欢迎交流学习，反正我还是菜鸡
 
 
 
-## :fire: 2022-3-2更新
-
-有点忙，几天没看了，又来整理下，撸个毛还要学很多
+## :fire: 2022-4-13不更新通知
 
 
+本库可能就此停更，因为代挂的问题，现在脚本均采用授权模式，即便我分享了脚本，没有卡密，你也跑不起来
 
-### 趣躺赚 wx_qtz.js
+请进作者群获取卡密，或者能力强的自己尝试写脚本
 
-cron 一天3-4次
+
+大概`4月底5月初`可能会进行关库，请自行备份！
+
+
+
+## :fire: 2022-4-7更新
+
+
+昨晚开始传了几个版本的所谓破解版快手，有的甚至说会偷京东CK，今天我把我拿到的版本导入vscode对比了一下，恍然大悟
+
+出于对原作者尊重，不能再进行更新，会改的自己改吧，或者用别人破解版
+
+目前作者 @leafxcy 已关库并注销
+
+
+
+### 快手果园 ks_fruit.js
+
+Cron 随意，一天一次
 
 <details>
 <summary>食用步骤：</summary>
 <br />
-微信小程序，新人直领0.3
+抓get包，进app-左上角三横-快手果园，获取Cookie
 
-抓POST包，只要请求头包含openid、userToken、userKey、apmat的值，参考链接
+https://ug-fission.kuaishou.com/rest/n/darwin/orchard/water/watering
 
-https://wx.17u.cn/platformflowpool/homepage/info
-
-复制全部请求头，使用顶部链接把请求头转换成json格式
-
-    export qtzhd='{"Host":"wx.17u.cn",***"html"}'
+    export KS_COOKIE='client_key=***;did=***;kuaishou.api_st=***;ud=***;ver=***;'
 
 </details>
 
-    //1万金砖=1元，每天大概有几百
+    // 2022-4-8新增一次性收完所有浇水红包
 
+
+
+### 闲趣赚 xqz.js
+
+cron 10 12 * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+下载链接：http://i.hbymcm.cn/down
+
+新人可直接领2个0.3，大佬建议做了新人再跑，收益多点，我懒！
+
+抓get包，找到cookie数据即可，就是做的分红的浏览任务
+
+https://wap.huayingrc.com/user
+
+    export xqzck='Cookie'
+
+</details>
+
+    // 2022-4-8 脚本没失效，才发现抓包host变了，自己重新抓
+
+
+
+
+### 帮多多 bdd.js
+
+cron 40 6-13 * * * 一天7-8次
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+* [x] 收益：每天0.2-0.3
+
+* [x] 多账户：用@分隔，但是1个IP限制1个号...
+
+下载地址：http://woaizhuanqian3.cn/lovemoney.html
+
+抓域名`www.cqsslhj.com`的Authorization的值，例如：
+
+https://www.cqsslhj.com/SysBase/User/GetUserCaptital?
+
+    export bddtoken='Authorization的值'
+
+
+
+</details>
+
+    // 2022-4-8提示授权码过期的重新抓包就行，自己试下了再反馈
+
+
+
+
+### ~顺丰·乘丰寻宝记 cfxbj.js~
+
+cron 一天一次
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+抓POST包，打开顺丰速运+（小程序）-乘风寻宝记即可获取数据
+
+https://mcs-mimp-web.sf-express.com/mcs-mimp/share/weChat/buildP3
+
+只要有cookie就行的任意链接
+
+    export cfxbjck='JSESSIONID=***'
+
+</details>
+
+    // 2022-3-23活动截止4月3号
+
+
+
+
+
+
+## :lemon: 2022-4-7更新
+
+
+:exclamation: `快手`以及`酷狗`由于代挂太多，脚本作者已经停用了，这一波闲鱼代挂狗赢了
+
+
+
+
+### 宝石星球 bsxq.js（安卓）
+
+cron 0 */1 * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+* [x] 收益：未知
+
+* [x] 多账户：未知
+
+下载链接 ：http://www.baoshixingqiu.com/
+
+抓get包，打开APP即可获取数据，找到token关键词的整条url，例如：
+
+    export bsxq='http://interface.baoshixingqiu.com/user/info?*****'
+
+
+</details>
+
+    // 2022-4-7已经抓取过的，不用改变量
+
+
+
+
+
+
+## :apple: 2022-4-2不更新说明
+
+快手如果提示违规操作，无法体现，可以先暂停脚本，手动提现。
+
+极速版入口：左上角三横-积分换好礼
+
+普通版入口：左上角三横-更多-我的钱包-天降红包提现
+
+
+
+
+
+
+## :tangerine: 2022-3-31更新
+
+
+### 省钱钱 sqq.js(安卓/IOS)
+
+cron 0 9 * * * 一天一次
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+* [x] 收益：一天0.2-0.3
+
+* [x] 多账户：用@隔开
+
+抓POST包，进APP-点赚钱-广告赚钱，获取数据
+
+https://api.youlaizhuan.com/VideoApi
+
+    export sqqbody='c=GetUniadVideoList&d={}&s=***&ts=***&a=***&t=***&v=1.8.16&deviceid=***'
+
+> 注：如果这里的`id=%7B%7D`，请替换成`d={}`
+
+</details>
+
+    // 2022-3-31特别说明：需要实名，且和手机一致才可提现，介意不玩
+
+
+
+
+### 花赚福利社 hzfls.js(小程序)
+
+cron 0 9 * * * 一天一次
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+* [x] 收益：一天0.2-0.3，跑完到账0.3
+
+* [x] 多账户：用@隔开
+
+抓GET包，进小程序获取数据，邀请码请填作者肥皂的`MM8Q6K`
+
+https://apiv2.huazhuanapp.com/api/v1/coin/task/list?
+
+把整条url链接放入变量
+
+    export hzflsurl='https://apiv2.huazhuanapp.com/api/v1/coin/task/list?***'
+
+</details>
+
+    // 2022-3-31黑号比抓包还快→_→
+
+
+
+
+
+## :fire: 2022-3-30更新
+
+
+### 放羊娃 fyw.js(安卓)
+
+cron 0 9 * * * 一天一次
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+下载：http://www.fywa.com.cn/app/index.html
+
+* [x] 收益：一天0.1(挺少的，我都不想放)
+
+* [x] 多账户：未知
+
+抓GET包，只要有Authorization的值就可以了
+
+> 注：先去提现绑定支付宝(手机)再跑，否则跑不了！
+
+https://api.fywa.com.cn/api/user/coin/total
+
+    export fywtoken='Authorization的值'
+
+</details>
+
+    // 2022-3-30不限少的玩
+
+
+
+
+
+### 酷狗大字版 kgdzb.js(安卓)
+
+cron 0 9 * * * 看任务一天一次就可
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+* [x] 收益：一天0.6
+
+* [x] 多账户：用@隔开
+
+进APP-福利，抓get包，每个人抓的host可能不一致，找*.kugou.com，只要有token、userid等关键数据即可，把整段url，填入变量，参考 `https://gateway.kugou.com/v1/***`
+
+    export kugouurl='这里填入url链接！链接！'
+
+
+</details>
+
+    // 2022-3-30更正描述，脚本未更新
+
+
+
+
+## 2022-3-27更新
+
+
+
+
+### 足乐商城 zlsc.js（APP）
+
+cron 5 0,12,20 * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+* [x] 收益：预估1+，新人送10，首提0.3，之后是23.8...
+
+* [x] 限制端：IOS(足乐商城)、安卓(足乐星球)
+
+下载链接
+
+https://app.sjdhwu.com/h5/#/pages/others/download_blade
+
+手机注册后，密码设置好，一会要用，多账号@隔开
+
+注意：跑脚本会挤掉手机登录状态！
+
+    export zlzh='手机号#密码'
+
+提现金额是固定的，首次0.3可以自己提
+
+    export balance='23.8'
+
+就是提现页面你的真实姓名
+
+    export zlname='张三'
+
+
+
+</details>
+
+    // 2022-3-27更新活动不存在问题
+
+
+
+
+
+
+
+### 科勒优选 klyx.js（小程序）
+
+cron 一天一次
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+* [x] 每天收益：0.2
+
+* [x] 限制端：微信·小程序
+
+抓POST包，找不到入口的从公众号推文进
+
+https://mp.weixin.qq.com/s/Ar5oqSOq1STvABR2AlWxLw
+
+需要请求头里的数据
+
+https://kohler-mini.brandsh.cn/mini.php/fissionCustom/lotteryPage
+
+    export klyxtk='xcx_openid=xxxxxxxxx&activeId=xxxx&city=xxxxx'
+
+</details>
+
+    // 2022-3-27更新活动不存在问题
+
+
+
+
+
+
+
+## 2022-3-25更新
+
+
+
+
+### 百事乐元 bsly.js
+
+cron 一天一次
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+百事乐元微信小程序，积分换肥宅快乐水
+
+抓POST包，获取token值即可，作者说找doSignIn，我没找到用了下面链接的token
+
+https://pepcoin.pepsico.com.cn/api/wxapp/doGetUserInfo
+
+    export yml_bsly_data='token值'
+
+UA可选变量，填不填自己看
+
+    export yml_bsly_UA='Mozilla/5.0***android'
+
+</details>
+
+    // 2022-3-25只有签到，失效了重抓
+
+
+
+
+### 可推 kt.js
+
+cron 25 6-15 * * * 
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+应用商店下载注册-赚金币，抓带有 https://api.ketui.cn/ 链接，只需要请求头上的Authorization值 
+
+    export soy_kt_data='Authorization的值'
+
+</details>
+
+    // 2022-3-25目前看收益也不高
+
+
+
+
+### 联想商城签到 lx.js
+
+cron 一天一次
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+我没有账号，懒得注册，有的自己测试吧
+
+注册链接：https://mclub.lenovo.com.cn
+
+    export lxzh='账号#密码@账号密码'
+
+</details>
+
+    // 2022-3-25积分和乐豆
+
+
+
+### 渤海宣传员 bhxcy.js
+
+cron 一天一次
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+渤海宣传员 微信搜索小程序，电子账户随意，反正我不注册
+
+抓POST包，有uid和token值即可
+
+https://api.yd.ihaoqu.com/?r=api2&apiAction=SignIn
+
+    export bhxcytoken='uid=***&token=***'
+
+</details>
+
+    // 2022-3-25更新加入用户信息和余额显示，自动兑换e卡兑换码会发到绑定的手机号
+
+
+
+
+
+
+
+### 源火星球 yhxq.js
+
+cron 13 0-23/4 * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+注册好后下载app并登录
+
+地址：http://reg.yuanhuoxingqiu.com/
+
+抓get包，登录app即可获取数据，只有Authorization值就行,删掉Bearer和空格，只要纯数字的组合
+
+http://api.yuanhuojisuban.com/user/account
+
+由于依赖每次拉库会被覆盖，请在脚本同目录手动新建空白文件`raw_master_yhxq_variable.js`
+
+复制下列内容，删掉括号和中文字符，填上token和UA变量后，保存即可
+
+```
+module.exports = {"code":200,"yhxq_variable_data":{
+    "config":[{
+        "url":"https://gitee.com/soy-tool/app-script/raw/master/app_yhxq.js",
+        "update":false,
+        "notice":false
+    }],
+    "user_data":[{
+        "token":"请求头上的Authorization值",
+        "Withdrawal":(是否提现,true代表提现,false反之),
+        "Withdrawal_Time":(提现的时间,请配合自己设定的cron填写),
+        "Feed":(喂养,true代表喂养,false反之),
+        "Hoe":(拔萝卜次数,每天可免费一次,默认填1),
+        "UA":"请求UA头,请求头的User-Agent值(选填)"
+    },{
+        "token":"多号如上,没有就删除,否则报错",
+        "Withdrawal":多号如上,没有就删除,否则报错,
+        "Withdrawal_Time":多号如上,没有就删除,否则报错,
+        "Feed":多号如上,没有就删除,否则报错,
+        "Hoe":(拔萝卜次数,每天可免费一次,默认填1),
+        "UA":"多号如上,没有就删除,否则报错"
+    },{
+        "token":"多号如上,没有就删除,否则报错",
+        "Withdrawal":多号如上,没有就删除,否则报错,
+        "Withdrawal_Time":多号如上,没有就删除,否则报错,
+        "Feed":多号如上,没有就删除,否则报错,
+        "Hoe":(拔萝卜次数,每天可免费一次,默认填1),
+        "UA":"多号如上,没有就删除,否则报错"
+    }
+    
+]}}
+```
+
+</details>
+
+    // 2022-3-17更新提现、拔萝卜，请更新配置文件
+
+
+
+
+
+
+
+
+## 2022-3-23更新
+
+
+
+
+### 腾讯自选股V2 txstockV2.js
+
+cron 35 11,16 * * *
+
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+简化了抓包，适合新版的，老版的能跑就不用动！
+
+需要APP和公众号2个数据，多账户用@隔开
+
+1.APP端：抓wzq.tenpay.com包，把url里的openid和fskey用&连起来
+
+2.公众号端：腾讯自选股微信版->右下角好福利->福利中心，抓wzq.tenpay.com包，把Cookie里的wzq_qlskey和wzq_qluin用&连起来
+
+    export TxStockCookie='openid=xx&fskey=yy&wzq_qlskey=zz&wzq_qluin=aa'
+
+> 没有公众号的CK删掉微信的变量，也可以跑
+
+提现设置：默认提现5元，需要改的话自己设置TxStockCash变量，0代表不提现，1代表提现1元，5代表提现5元
+
+    export TxStockCash='5'
+
+新手任务设置：默认不做新手任务，需要做的话设置TxStockNewbie为1
+
+    export TxStockNewbie='1'
+
+分享任务设置：默认会做互助任务，需要多账号。不想做的话设置TxStockHelp为0
+
+    export TxStockHelp='0'
+
+
+</details>
+
+    // 2022-3-23使用了new版的看过来，现在的脚本比较好抓了
+
+
+
+
+### 广汽三菱 gqsl.js
+
+cron 0 7 * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+抓GET包，打开APP即可获取数据，只要请求头Authorization的值
+
+比如：https://mspace.gmmc.com.cn/user-soa/customer/check/user-token
+
+多账号@隔开，多账户请多开应用，退出会使Authorization失效
+
+    export slCookies='xxxxx@xxxxxx'
+
+</details>
+
+    // 2022-3-23更新评论不加积分，失效了重新抓
+
+
+
+
+
+
+## 2022-3-20更新
+
+
+
+### 快手 ks.js
+
+cron 22 10-20 * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+普通版的快手，非极速版，CK可以通用
+
+注意现在多一个did的设备参数，必填！多账户@隔开
+
+> 由于我IOS端找不到入口，我就用的极速版抓的CK里提取了did数值，粘贴在后面，任务一样跑
+
+    export ksCookie='kuaishou.api_st=***;did=***;'
+
+默认每天0点自动兑换金币，14点提现，不想提现设置成99，提到微信把`ksPayType=WECHAT;`，提到支付宝把`ksPayType=ALIPAY;`，写到对应账号ck后面
+
+    export ksWithdrawTime='14'
+
+默认提现2块，要改的话把提现金额填到变量。如提现失败，手动接验证码提现一次，自动检测绑定了微信还是支付宝提现账号，都绑定了的话默认提现到微信，默认从高到低提现，固定金额用以下变量
+
+>手动提现入口：头像-更多-我的钱包-天降红包提现
+
+    export ksCash='100'
+
+默认提现时间会触发通知，可以把ksjsbNotify设置成2，每次运行都通知；为0，则不通知
+
+    export ksNotify='0'
+
+</details>
+
+    // 2022-3-20修复签到异常的错误和获取不到提现列表的问题，增加指定提现渠道
 
 
 
@@ -75,45 +685,125 @@ https://api.kuaishouzt.com/rest/zt/appsupport/yoda/accelerate/info
 
     export ksjsbCookie='kuaishou.api_st=***;'
 
-默认每天15点兑换金币和提现，要改的话把提现时间填到变量
+默认每天0点自动兑换金币，15点提现，要改的话把提现时间填到变量，不想提现设置成99，提到微信把`ksPayType=WECHAT;`，提到支付宝把`ksPayType=ALIPAY;`，写到对应账号ck后面
 
     export ksjsbWithdrawTime='15'
 
-默认提现3块，要改的话把提现金额填到变量。如提现失败，手动接验证码提现一次
+默认从高到低提现，固定金额用以下变量。如提现失败，手动接验证码提现一次，自动检测绑定了微信还是支付宝提现账号，都绑定了的话默认提现到微信
+
+>手动提现入口：左上角三横-积分换好礼
 
     export ksjsbCash='100'
 
+默认提现时间会触发通知，可以把ksjsbNotify设置成2，每次运行都通知；为0，则不通知
+
+    export ksjsbNotify='0'
+
 </details>
 
-    // 2022-3-2此版本有更详细的做任务，推荐使用
-
-    // 支持签到、开宝箱、翻倍、看广告、逛街任务、抽奖
+    // // 2022-3-20增加指定提现渠道
 
 
 
 
 
 
-### 渤海宣传员 wx_bhxcy.js
+## 2022-3-18更新
 
-cron 40 10 * * *
+
+### 海尔智家 haier.js
+
+cron 未知
 
 <details>
 <summary>食用步骤：</summary>
 <br />
-微信小程序，需要注册，电子账户看你们，反正我不注册
+海尔智家app-手机号登录-设置登录密码-退出登录，然后选择密码登录，抓POST包
 
-抓POST包，点天天签到 最高领88元红包，拆，即可获取数据
+https://zj.haier.net/oauthserver/account/v2/login
 
-https://api.yd.ihaoqu.com/?r=api2&apiAction=SignIn
+请求头转换成json格式才可以用
 
-    export bhxcytoken='uid=***&token=***&signure=***'
+    export haierhd='{"appVersion":"7.9.0"***"okhttp/4.9.3"}'
+
+body复制出来就可以了
+
+    export haierbody='{"username":***"phoneType":"Mi 10"}'
 
 </details>
 
-    //2022-3-2签到兑换京东E卡
+    // 2022-3-18根据脚本完成任务来看，还没发现是做的啥任务
 
 
+
+
+
+
+## 2022-3-12更新
+
+
+### 酷狗音乐 kgyy.js（安卓）
+
+cron 一天一次即可
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+抓GET包，我的-任务中心，需带有token、uuid、mid、userid、dfid的整段链接
+
+https://gateway.kugou.com/mstc/musicsymbol/v1/user/info?userid=***"
+
+    export kgyy="https://gateway.kugou.com/mstc/musicsymbol/v1/user/info?userid=***"
+
+</details>
+
+    // 2022-3-12 提现需要实名+人脸，介意不玩
+
+
+
+
+
+
+## 2022-3-6更新
+
+
+
+
+
+### 饿了么吃货豆 elm.js
+
+Cron 5 12,18 * * * 
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+抓get包，进APP-我的-赚吃货豆，即可获取数据
+
+https://h5.ele.me/svip/task-list
+
+只要cookie，不要cookie2，复制出来包括分号，多账户@隔开
+
+    export elmck='SID=***'
+
+
+说明：以上数据由IOS设备抓取，安卓机用Alook浏览器或者用M浏览器，UA设置为
+
+    Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12F70 Safari/600.1.4
+
+
+然后打开h5.ele.me，手机号+验证码登录后，抓的ck就可以用了。第一个参数是__wpk******，最后一个参数是x5check_ele=******
+
+</details>
+
+    // 2022-3-6修复报错
+
+
+
+
+
+
+
+## 2022-3-2更新
 
 
 ### 康师傅畅饮社wx_ksfcys.js
@@ -125,7 +815,7 @@ cron 42 9,18 * * *
 <br />
 微信小程序，注册送200积分
 
-抓GET包，点我的即可获取数据，多账号@隔开
+抓GET包，点我的即可获取token数据，多账号@隔开
 
 https://club.biqr.cn/api/member/getMemberInfo
 
@@ -138,76 +828,6 @@ https://club.biqr.cn/api/member/getMemberInfo
 </details>
 
     // 2022-3-2积分可换E卡，重进小程序有可能会挤掉线，请重新抓
-
-
-
-
-
-### 微娱推客 wytk.js
-
-cron 26/5 10,13 * * *(一天12-15次)
-
-<details>
-<summary>食用步骤：</summary>
-<br />
-微信打开注册，然后根据提示下载安装并登陆
-
-https://lm.wy.run/index/user/wechatLogin
-
-抓POST包，签到即可获取toekn值
-
-> 我的-设置-复制appkey-返回 活动-立即签到-保存图片-微信扫码 登陆-签到-输入appkey-再次点签到，等视频完结即可
-
-https://lm.wy.run/api/sign/index
-
-
-    export soy_wytk_data="token&UA"
-
-</details>
-
-    // 2022-3-2更新了自动提现1元，请自行绑定支付宝
-
-
-
-
-
-## 2022-2-23更新
-
-
-### 中青看点 zqkd
-
-全系更新脚本为v3.9.8，详细看内部教程
-
-    //不到3天，我的账号就黑了，真开心
-
-
-
-### 源火星球 yhxq.js
-
-cron 13 0-23/2 * * *
-
-<details>
-<summary>食用步骤：</summary>
-<br />
-注册好后下载app并登录
-
-地址：http://reg.yuanhuoxingqiu.com/
-
-抓get包，登录app即可获取数据，只有Authorization值就行
-
-http://api.yuanhuojisuban.com/user/account
-
-这里的Authorization值，删掉Bearer和空格，只要纯数字的组合
-
-    export soy_yhxq_Authorization="568***"
-
-这里的UA为可选变量，可填可不填
-
-    export soy_yhxq_UA="Mozilla/5.0***"
-
-</details>
-
-    // 2022-2-23出错的请更新脚本
 
 
 
@@ -298,11 +918,14 @@ module.exports = {"code":200,
 "kyin":[//快音
 "device-id值&access-token值&refresh_token值",//这是第1个账号
 "",//多账号逗号换行
-] 
+]
+}}
 ```
 </details>
 
     //2022-2-22更新：报错的重新拉
+
+
 
 
 ### 腾讯自选股 txstock.js
@@ -325,7 +948,7 @@ https://wzq.tenpay.com/cgi-bin/activity_task_daily.fcgi?
     export TxStockAppUrl='https://wzq.ten....#https://wzq.ten....'
 
 
-请求头header，转换一下格式 https://tooltt.com/header2json/
+请求头header，转换成JSON格式；需要包含pgv_pvid、ts_sid以及ts_uid等关键数据，跑不起来的根据网友 @Anima-No 热心反馈，在zqact.tenpay.com域名下的请求头可以使用
 
     export TxStockAppHeader='{"Host":"...","Accept":"..."}#{"Host":"...","Accept":"..."}'
 
@@ -335,7 +958,7 @@ https://wzq.tenpay.com/cgi-bin/activity_task_daily.fcgi?
 
 https://wzq.tenpay.com/cgi-bin/activity_task_daily.fcgi?
 
-请求头header，转换一下格式 https://tooltt.com/header2json/
+请求头header，转换成JSON格式；需要包含pgv_pvid、ts_sid以及ts_uid等关键数据，跑不起来的根据网友 @Anima-No 热心反馈，在zqact.tenpay.com域名下的请求头可以使用
 
     export TxStockWxHeader='{"Host":"...","Accept":"..."}#{"Host":"...","Accept":"..."}'
 
@@ -360,8 +983,7 @@ https://wzq.tenpay.com/cgi-bin/activity_task_daily.fcgi?
 
 </details>
 
-    // 新增一个新版的，老版能跑的请禁用！！！
-    新抓包的用new版，不然可能报错，老版的不用管
+    // 老版本，刚看到的请看新脚本
 
 
 
@@ -397,6 +1019,9 @@ https://api.st615.com/v2/user/info
     // 2022-1-12更新：修复文章、提现
 
 
+
+
+
 ### 滴滴果园 dd_fruit.js
 
 cron 10 0,8,12,18 * * *
@@ -405,6 +1030,10 @@ cron 10 0,8,12,18 * * *
 <summary>食用步骤：</summary>
 <br />
 抓get包，进app-5天种水果，浇一次水，搜water
+
+> 找不到的搜`game.xiaojukeji.com`，里面找带有`wsgsig`的链接
+
+请求里找到token的值就可以了
 
 把请求主题中的 token 值复制出来，多账户用,号(英文)隔开
 
@@ -426,66 +1055,10 @@ cron */30 * * * *
 
 
 
-## 2022-1-8更新
-
-
-### 闪辆 sl.js
-
-cron 5 0 * * *
-
-<details>
-<summary>食用步骤：</summary>
-<br />
-抓get包，进app-来玩获取url即可
-
-https://newvideo.autohome.com.cn/openapi/activity-api/switch/get_user_switch_info
-
-    export slurl="https://newvideo.autohome.com.cn/openapi/activity-api/switch/get_user_switch_info?_appid=***"
-
-</details>
-
-    // 不知道是我黑号了，看视频没有加积分，手动可以
-
-
-
-
 
 
 
 ## 2022-1-3更新
-
-
-
-### 快手极速版 ks_js.js
-
-Cron 11 8 * * *（一天一次即可，仅供参考）
-
-<details>
-<summary>食用步骤：</summary>
-<br />
-抓get包，进app-点红包进去，获取Cookie
-
-https://nebula.kuaishou.com/rest/n/nebula/activity/earn/overview/basicInfo
-
-    export kshd="Cookie1@Cookie2"
-
-0为不自动提现,0.3为提现3毛，默认自动提现3元
-
-    export kscash="3"
-
-提现时间变量，默认20点提现和金币兑换
-
-    export kstxtime=""
-
-通知变量，默认开启，2为关闭通知
-
-    export kstz=""
-
-</details>
-
-    // 2022-1-3更新：修复报错bug 注意：不刷视频，只挂脚本容易黑号！
-
-
 
 
 ### 高佣金(更名：佣金帝) gyj.js
@@ -506,6 +1079,8 @@ https://client.atomsh.com/e00-bee-client/client/act/getGoldCount
 </details>
 
     // 记得金币要手动去商城兑换，然后再提现
+
+
 
 
 
@@ -595,33 +1170,6 @@ https://dj.palmestore.com/zycl/gold/receive
 
 
 
-### 饿了么吃货豆 elm.js
-
-Cron 5 12,18 * * * 
-
-<details>
-<summary>食用步骤：</summary>
-<br />
-抓get包，进APP-我的-赚吃货豆，即可获取数据
-
-https://h5.ele.me/svip/task-list
-
-只要cookie，不要cookie2，复制出来包括分号，多账户@隔开
-
-    export elmck='SID=***'
-
-
-说明：以上数据由IOS设备抓取，安卓机用Alook浏览器或者用M浏览器，UA设置为
-
-    Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12F70 Safari/600.1.4
-
-
-然后打开h5.ele.me，手机号+验证码登录后，抓的ck就可以用了。第一个参数是__wpk******，最后一个参数是x5check_ele=******
-
-</details>
-
-    // 吃货豆可以换券
-
 
 
 
@@ -682,24 +1230,6 @@ cron 随意，一天一次即可
 
 
 
-### 快手果园 ks_fruit.js
-
-Cron 随意，一天一次
-
-<details>
-<summary>食用步骤：</summary>
-<br />
-抓get包，进app-左上角三横-快手果园，获取Cookie
-
-https://ug-fission.kuaishou.com/rest/n/darwin/orchard/water/watering
-
-    export KS_COOKIE='client_key=***;did=***;kuaishou.api_st=***;ud=***;ver=***;'
-
-</details>
-
-    // 默认会助力作者，介意勿玩，代码加密的
-
-
 
 
 ### 美团赚米粒 meituan.js
@@ -757,29 +1287,6 @@ http://mobads.baidu.com/cpro/ui/mads.php?code2=***
 
 
 
-### 沃邮箱 公众号 wx_wyx.js
-
-cron 11 10 * * *
-
-<details>
-<summary>食用步骤：</summary>
-<br />
-关注公众号:联通沃邮箱-进入邮箱，不知道密码的重置
-
-重置密码：https://user.mail.wo.cn/m/reset?mobile
-
-
-抓Get包，福利中心-签到领话费，多账号@隔开
-
-https://nyan.mail.wo.cn/cn/sign/index/index?mobile=***&userName=&openId=***
-
-    export soy_wyx_data="手机号#密码#抓包链接https://nyan.mail.wo.cn/cn/sign/index/index?mobile=***&userName=&openId=***"
-    
-    export soy_wyx_UA="Mozilla/5.0***"
-
-</details>
-
-    // 目前公众号系统在维护，跑不动
 
 
 
@@ -818,6 +1325,10 @@ step = str(random.randint(20000, 21000))
     // 推送通知好像是微信企业微信，我改过其他推送但也没成功，算了
 
 
+
+
+
+
 ### 萤石云视频 ysy.js
 
 cron 随意，一天一次即可
@@ -829,7 +1340,7 @@ cron 随意，一天一次即可
 
 https://api.ys7.com/v3/users/login/v2
 
-把header转成JSON：https://tooltt.com/header2json/
+把header转成JSON格式
 
     export ysyhd=''
 
@@ -856,23 +1367,7 @@ https://api.ys7.com/v3/integral/yd/pay
     // 要攒到1块钱是个无比漫长的过程
 
 
-### 亿享云 yxyapp.js
 
-
-cron 随意，一天一次即可
-
-<details>
-<summary>食用步骤：</summary>
-<br />
-注册地址：https://ystzwz.com/h6/#/
-
-就是个网页，没有APP的
-
-    export yxyPhone='手机号#密码'
-
-</details>
-
-    // 不知道靠不靠谱，反正一直活着
 
 
 ## 晶彩看点 jckd
@@ -907,4 +1402,4 @@ cron 随意，一天一次即可
 * [@ziye888](https://github.com/ziye888/JavaScript)「ziye」
 * [@soy](https://gitee.com/soy-tool/app-script)「soy」
 * [@passerby-b](https://github.com/passerby-b/didi_fruit)「passerby-b」
-
+* [@yml2213](https://github.com/yml2213/javascript)「yml2213」
